@@ -57,7 +57,7 @@ h1 {
 .wrapper {
   border: solid black 1px;
   text-align: center;
-  width: 45%;
+  width: 48%;
   min-height: 50vh;
 }
 
@@ -75,6 +75,20 @@ header {
 }
 
 .search__form {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search__form--input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,7 +96,24 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80%;
-  margin: auto;
+}
+
+.results__list {
+  margin: 0 2%;
+}
+
+.results__result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  text-align: left;
+  margin: 1% 0;
 }
 /*# sourceMappingURL=main.css.map */
