@@ -1,6 +1,14 @@
 import Button from "./Button";
 
 const Results = ({ results, error, setNominees, nominees }) => {
+  const handleClick = (movie) => {
+    if (nominees.length < 5) {
+      setNominees([...nominees, movie]);
+    } else {
+      alert("You can't nominate more than five movies.");
+    }
+  };
+
   return (
     <div className="results wrapper">
       <h1>Results</h1>
@@ -19,17 +27,7 @@ const Results = ({ results, error, setNominees, nominees }) => {
                   <p>({r.Year})</p>
                 </li>
                 <>
-                  <Button
-                    onClick={() => {
-                      if (nominees.length < 5) {
-                        setNominees([...nominees, r]);
-                      } else {
-                          alert("You can't nominate more than five movies.")
-                      }
-                    }}
-                  >
-                    Nominate
-                  </Button>
+                  <Button onClick={() => handleClick(r)}>Nominate</Button>
                 </>
               </div>
             );
