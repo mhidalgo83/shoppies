@@ -9,6 +9,12 @@ const Results = ({ results, error, setNominees, nominees }) => {
     }
   };
 
+  const handleDisable = (movie) => {
+    if (nominees.includes(movie)) {
+      return movie.Title;
+    }
+  };
+
   return (
     <div className="results wrapper">
       <h1>Results</h1>
@@ -27,7 +33,12 @@ const Results = ({ results, error, setNominees, nominees }) => {
                   <p>({r.Year})</p>
                 </li>
                 <>
-                  <Button onClick={() => handleClick(r)}>Nominate</Button>
+                  <Button
+                    disabled={handleDisable(r)}
+                    onClick={() => handleClick(r)}
+                  >
+                    Nominate
+                  </Button>
                 </>
               </div>
             );
