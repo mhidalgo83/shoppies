@@ -22,8 +22,13 @@ const App = () => {
         setError={setError}
       />
       <section className="search-view">
-        <Results results={results} error={error} setNominees={setNominees} />
-        <Nominees nominees={nominees} />
+        <Results
+          results={results}
+          error={error}
+          setNominees={setNominees}
+          nominees={nominees}
+        />
+        <Nominees nominees={nominees} setNominees={setNominees} />
       </section>
     </div>
   );

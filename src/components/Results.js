@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-const Results = ({ results, error, setNominees }) => {
+const Results = ({ results, error, setNominees, nominees }) => {
   return (
     <div className="results wrapper">
       <h1>Results</h1>
@@ -14,12 +14,22 @@ const Results = ({ results, error, setNominees }) => {
           {results.map((r) => {
             return (
               <div className="results__result">
-                <li key={r.imdbID} >
+                <li key={r.imdbID}>
                   <h3>{r.Title}</h3>
                   <p>({r.Year})</p>
                 </li>
                 <>
-                  <Button>Nominate</Button>
+                  <Button
+                    onClick={() => {
+                      if (nominees.length < 5) {
+                        setNominees([...nominees, r]);
+                      } else {
+                          alert("You can't nominate more than five movies.")
+                      }
+                    }}
+                  >
+                    Nominate
+                  </Button>
                 </>
               </div>
             );
