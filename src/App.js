@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import SearchBar from "./components/SearchBar";
 import Results from "./components/Results";
@@ -11,6 +11,14 @@ const App = () => {
   const [results, setResults] = useState([]);
   const [nominees, setNominees] = useState([]);
   const [movieIds, setMovieIds] = useState([]);
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("nominees")) {
+  //     let nomStorage = JSON.parse(localStorage.getItem("nominees"));
+  //     setNominees(nomStorage)
+  //   }
+  //   console.log(localStorage)
+  // }, []);
 
   return (
     <div className="container">

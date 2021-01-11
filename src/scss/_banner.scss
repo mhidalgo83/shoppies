@@ -4,21 +4,22 @@
     list-style: none;
     position: absolute;
     border: solid black 1px;
-    background: white;
     width: 50%;
     text-align: center;
     margin-left: 25%;
     top: 30%;
     padding: 5%;
     opacity: 1;
+    background: linear-gradient(90deg, rgba(16,0,36,1) 0%, rgba(53,53,190,1) 0%, rgba(0,212,255,1) 95%);
     transition: all .5s;
-
+    color: white;
     &__close {
         position: absolute;
         top: 2rem;
         right: 2rem;
         display: flex;
         align-self: flex-end;
+        color: black;
         &:hover {
             cursor: pointer;
         }

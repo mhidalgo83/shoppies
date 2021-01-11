@@ -1,8 +1,14 @@
-import { useState } from "react";
 import Result from "./Result";
 
-const Results = ({ results, error, setNominees, nominees, movieIds, setMovieIds }) => {
-  
+const Results = ({
+  results,
+  error,
+  setNominees,
+  nominees,
+  movieIds,
+  setMovieIds,
+}) => {
+
   const handleClick = (movie) => {
     if (nominees.length < 5) {
       setNominees([...nominees, movie]);
@@ -23,7 +29,13 @@ const Results = ({ results, error, setNominees, nominees, movieIds, setMovieIds 
       ) : (
         <ul className="results__list">
           {results.map((r) => (
-            <Result key={r.imdbID} result={r} handleClick={handleClick} movieIds={movieIds} />
+            <Result
+              key={r.imdbID}
+              result={r}
+              handleClick={handleClick}
+              movieIds={movieIds}
+              nominees={nominees}
+            />
           ))}
         </ul>
       )}

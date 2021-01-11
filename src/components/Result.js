@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "./Button";
 
-const Result = ({ result, handleClick, movieIds, search }) => {
+const Result = ({ result, handleClick, movieIds, search, nominees }) => {
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
@@ -19,7 +19,11 @@ const Result = ({ result, handleClick, movieIds, search }) => {
         <p>({result.Year})</p>
       </li>
       <>
-        <Button disabled={disabled} onClick={() => handleClick(result)}>
+        <Button
+          className={disabled ? "" : "btn__add"}
+          disabled={disabled}
+          onClick={() => handleClick(result)}
+        >
           Nominate
         </Button>
       </>
