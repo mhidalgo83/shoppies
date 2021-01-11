@@ -12,13 +12,25 @@ const App = () => {
   const [nominees, setNominees] = useState([]);
   const [movieIds, setMovieIds] = useState([]);
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("nominees")) {
-  //     let nomStorage = JSON.parse(localStorage.getItem("nominees"));
-  //     setNominees(nomStorage)
-  //   }
-  //   console.log(localStorage)
-  // }, []);
+  useEffect(() => {
+    if (localStorage.getItem("nominees")) {
+      let nomStorage = JSON.parse(localStorage.getItem("nominees"));
+      setNominees(nomStorage);
+    }
+    if (localStorage.getItem("movieids")) {
+      let idStorage = JSON.parse(localStorage.getItem("movieids"));
+      setMovieIds(idStorage);
+    }
+    console.log(localStorage);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("nominees", JSON.stringify(nominees));
+  }, [nominees]);
+
+  useEffect(() => {
+    localStorage.setItem("movieids", JSON.stringify(movieIds));
+  }, [movieIds]);
 
   return (
     <div className="container">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "./Button";
 
-const Result = ({ result, handleClick, movieIds, search, nominees }) => {
+const Result = ({ result, handleClick, movieIds, search }) => {
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {

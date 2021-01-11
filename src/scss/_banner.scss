@@ -3,16 +3,21 @@
     flex-direction: column;
     list-style: none;
     position: absolute;
+    align-self: start;
     border: solid black 1px;
-    width: 50%;
+    width: 80%;
+    height: 70%;
     text-align: center;
-    margin-left: 25%;
-    top: 30%;
+    margin-left: 10%;
+    top: 10%;
     padding: 5%;
     opacity: 1;
     background: linear-gradient(90deg, rgba(16,0,36,1) 0%, rgba(53,53,190,1) 0%, rgba(0,212,255,1) 95%);
     transition: all .5s;
     color: white;
+    ul {
+       display: flex;
+    }
     &__close {
         position: absolute;
         top: 2rem;
@@ -23,6 +28,12 @@
         &:hover {
             cursor: pointer;
         }
+    }
+    &__img {
+        width: 80%;
+    }
+    &__popcorn {
+        width: 10%;
     }
 }
 

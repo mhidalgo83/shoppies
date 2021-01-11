@@ -1,9 +1,6 @@
-import { useEffect } from "react";
 import Button from "./Button";
 
 const Nominees = ({ nominees, setNominees, movieIds, setMovieIds }) => {
-
-
   const handleClick = (movie) => {
     setNominees(nominees.filter((m) => m !== movie));
     setMovieIds(movieIds.filter((m) => m !== movie.imdbID));

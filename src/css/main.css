@@ -154,11 +154,14 @@ header {
           flex-direction: column;
   list-style: none;
   position: absolute;
+  -ms-flex-item-align: start;
+      align-self: start;
   border: solid black 1px;
-  width: 50%;
+  width: 80%;
+  height: 70%;
   text-align: center;
-  margin-left: 25%;
-  top: 30%;
+  margin-left: 10%;
+  top: 10%;
   padding: 5%;
   opacity: 1;
   background: -webkit-gradient(linear, left top, right top, from(#100024), color-stop(0%, #3535be), color-stop(95%, #00d4ff));
@@ -166,6 +169,12 @@ header {
   -webkit-transition: all .5s;
   transition: all .5s;
   color: white;
+}
+
+.banner ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .banner__close {
@@ -182,6 +191,14 @@ header {
 
 .banner__close:hover {
   cursor: pointer;
+}
+
+.banner__img {
+  width: 80%;
+}
+
+.banner__popcorn {
+  width: 10%;
 }
 
 .visible {

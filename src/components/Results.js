@@ -8,6 +8,7 @@ const Results = ({
   movieIds,
   setMovieIds,
 }) => {
+ 
 
   const handleClick = (movie) => {
     if (nominees.length < 5) {

@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAlignJustify, fas, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAlignJustify,
+  fas,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Banner = ({ nominees }) => {
   const [close, setClose] = useState(true);
@@ -24,12 +28,15 @@ const Banner = ({ nominees }) => {
         onClick={handleClick}
       />
       <h1>These are your nominees for the 2021 Shoppies!!</h1>
-
       <ul>
         {nominees.map((n) => (
-          <li key={n.imdbID}>{n.Title}</li>
+          <div>
+            <li key={n.imdbID}>{n.Title}</li>
+            <img className="banner__img" src={n.Poster} alt="Movie poster" />
+          </div>
         ))}
       </ul>
+      <img className="banner__popcorn" src="./images/popcorn.png" alt="popcorn" />
     </div>
   );
 };
