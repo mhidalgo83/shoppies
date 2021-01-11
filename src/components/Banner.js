@@ -36,7 +36,28 @@ const Banner = ({ nominees }) => {
           </div>
         ))}
       </ul>
-      <img className="banner__popcorn" src="./images/popcorn.png" alt="popcorn" />
+      <div className="banner__footer">
+        <img
+          className="banner__popcorn"
+          src="./images/popcorn.png"
+          alt="popcorn"
+        />
+        <img
+          className="banner__popcorn inverted"
+          src="./images/popcorn.png"
+          alt="popcorn"
+        />
+        <img
+          className="banner__popcorn"
+          src="./images/popcorn.png"
+          alt="popcorn"
+        />
+        <img
+          className="banner__popcorn inverted"
+          src="./images/popcorn.png"
+          alt="popcorn"
+        />
+      </div>
     </div>
   );
 };

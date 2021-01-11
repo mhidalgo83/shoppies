@@ -6,10 +6,10 @@
     align-self: start;
     border: solid black 1px;
     width: 80%;
-    height: 70%;
     text-align: center;
     margin-left: 10%;
-    top: 10%;
+    min-height: 90vh;
+    top: 5%;
     padding: 5%;
     opacity: 1;
     background: linear-gradient(90deg, rgba(16,0,36,1) 0%, rgba(53,53,190,1) 0%, rgba(0,212,255,1) 95%);
@@ -33,12 +33,42 @@
         width: 80%;
     }
     &__popcorn {
-        width: 10%;
+        width: 12%;
+        animation: infinite rotation 2s;
     }
+    &__footer {
+        height: fit-content;
+        margin-top: 8%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.inverted{
+    transform: rotate(180deg);
+    animation: infinite rotationInverted 2s;
 }
 
 .visible {
     transition: all .5s;
     visibility: collapse;
     opacity: 0;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationInverted {
+    from {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(-180deg);
+    }
 }
