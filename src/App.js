@@ -9,6 +9,7 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
   const [nominees, setNominees] = useState([]);
+  const [movieIds, setMovieIds] = useState([]);
 
   return (
     <div className="container">
@@ -27,8 +28,16 @@ const App = () => {
           error={error}
           setNominees={setNominees}
           nominees={nominees}
+          movieIds={movieIds}
+          setMovieIds={setMovieIds}
         />
-        <Nominees nominees={nominees} setNominees={setNominees} />
+        <Nominees
+          nominees={nominees}
+          setNominees={setNominees}
+          movieIds={movieIds}
+          setMovieIds={setMovieIds}
+          search={search}
+        />
       </section>
     </div>
   );

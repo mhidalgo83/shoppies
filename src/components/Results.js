@@ -1,17 +1,14 @@
-import Button from "./Button";
+import { useState } from "react";
+import Result from "./Result";
 
-const Results = ({ results, error, setNominees, nominees }) => {
+const Results = ({ results, error, setNominees, nominees, movieIds, setMovieIds }) => {
+  
   const handleClick = (movie) => {
     if (nominees.length < 5) {
       setNominees([...nominees, movie]);
+      setMovieIds([...movieIds, movie.imdbID]);
     } else {
       alert("You can't nominate more than five movies.");
-    }
-  };
-
-  const handleDisable = (movie) => {
-    if (nominees.includes(movie)) {
-      return movie.Title;
     }
   };
 
@@ -25,24 +22,9 @@ const Results = ({ results, error, setNominees, nominees }) => {
         <h2>{error}</h2>
       ) : (
         <ul className="results__list">
-          {results.map((r) => {
-            return (
-              <div className="results__result">
-                <li key={r.imdbID}>
-                  <h3>{r.Title}</h3>
-                  <p>({r.Year})</p>
-                </li>
-                <>
-                  <Button
-                    disabled={handleDisable(r)}
-                    onClick={() => handleClick(r)}
-                  >
-                    Nominate
-                  </Button>
-                </>
-              </div>
-            );
-          })}
+          {results.map((r) => (
+            <Result key={r.imdbID} result={r} handleClick={handleClick} movieIds={movieIds} />
+          ))}
         </ul>
       )}
     </div>

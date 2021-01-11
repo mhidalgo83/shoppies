@@ -28,7 +28,7 @@ const SearchBar = ({ search, setSearch, setResults, setError }) => {
     <div className="search">
       <form className="search__form">
         <div className="search__form--input">
-          <label htmlFor="search">Search For Your Nominee</label>
+          <label htmlFor="search">Search Movies</label>
           <input
             type="text"
             name="search"
