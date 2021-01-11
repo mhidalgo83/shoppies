@@ -1,6 +1,6 @@
 .search {
   grid-column: 1 / 3;
-    
+
   &__form {
         margin: auto;
         display: flex;
@@ -10,9 +10,17 @@
         &--input {
             display: flex;
             flex-direction: column;
-        }
-    }
-    &__button {
+            width: 100%;
+            
+            label {
+                font-size: 1.4rem;
+            }
 
+            input {
+                border: solid 1px black;
+                font-family: inherit;
+                padding: 1rem;
+            }
+        }
     }
 }

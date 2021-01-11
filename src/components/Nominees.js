@@ -3,9 +3,9 @@ import Button from "./Button";
 const Nominees = ({ nominees, setNominees, movieIds, setMovieIds }) => {
   const handleClick = (movie) => {
     setNominees(nominees.filter((m) => m !== movie));
-    setMovieIds(movieIds.filter(m => m !== movie.imdbID))
+    setMovieIds(movieIds.filter((m) => m !== movie.imdbID));
   };
-  
+
   return (
     <div className="results wrapper">
       <h1>Nominees</h1>
@@ -19,7 +19,9 @@ const Nominees = ({ nominees, setNominees, movieIds, setMovieIds }) => {
                 <p>({n.Year})</p>
               </li>
               <>
-                <Button onClick={() => handleClick(n)}>Remove</Button>
+                <Button className="btn__del" onClick={() => handleClick(n)}>
+                  Remove
+                </Button>
               </>
             </div>
           );

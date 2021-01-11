@@ -24,6 +24,8 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.6;
+  background: -webkit-gradient(linear, left top, right top, from(#100024), color-stop(0%, #bebe35), color-stop(95%, #00d4ff));
+  background: linear-gradient(90deg, #100024 0%, #bebe35 0%, #00d4ff 95%);
 }
 
 h1 {
@@ -32,7 +34,7 @@ h1 {
 }
 
 li {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   list-style: none;
 }
 
@@ -107,10 +109,22 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+}
+
+.search__form--input label {
+  font-size: 1.4rem;
+}
+
+.search__form--input input {
+  border: solid 1px black;
+  font-family: inherit;
+  padding: 1rem;
 }
 
 .results {
   min-height: 5vh;
+  margin-bottom: 2rem;
 }
 
 .results__list {
@@ -142,28 +156,150 @@ header {
           flex-direction: column;
   list-style: none;
   position: absolute;
+  -ms-flex-item-align: start;
+      align-self: start;
   border: solid black 1px;
-  background: white;
-  width: 50%;
+  width: 80%;
   text-align: center;
-  margin-left: 25%;
-  top: 30%;
+  margin-left: 10%;
+  min-height: 90vh;
+  top: 5%;
   padding: 5%;
+  opacity: 1;
+  background: -webkit-gradient(linear, left top, right top, from(#100024), color-stop(0%, #3535be), color-stop(95%, #00d4ff));
+  background: linear-gradient(90deg, #100024 0%, #3535be 0%, #00d4ff 95%);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  color: white;
+}
+
+.banner ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .banner__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  color: black;
 }
 
 .banner__close:hover {
   cursor: pointer;
 }
 
+.banner__img {
+  width: 80%;
+}
+
+.banner__popcorn {
+  width: 12%;
+  -webkit-animation: infinite rotation 2s;
+          animation: infinite rotation 2s;
+}
+
+.banner__footer {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.inverted {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-animation: infinite rotationInverted 2s;
+          animation: infinite rotationInverted 2s;
+}
+
 .visible {
-  display: none;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  visibility: collapse;
+  opacity: 0;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotationInverted {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+}
+
+@keyframes rotationInverted {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+}
+
+.btn {
+  cursor: pointer;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: solid 1px black;
+}
+
+.btn__add {
+  color: white;
+  background-color: #3535be;
+}
+
+.btn__del {
+  background-color: #be3535;
+  color: white;
+}
+
+.btn:hover {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-box-shadow: 0px 5px 5px -7px #000000, 6px 6px 6px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px 5px -7px #000000, 6px 6px 6px 5px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=main.css.map */

@@ -19,7 +19,11 @@ const Result = ({ result, handleClick, movieIds, search }) => {
         <p>({result.Year})</p>
       </li>
       <>
-        <Button disabled={disabled} onClick={() => handleClick(result)}>
+        <Button
+          className={disabled ? "" : "btn__add"}
+          disabled={disabled}
+          onClick={() => handleClick(result)}
+        >
           Nominate
         </Button>
       </>
