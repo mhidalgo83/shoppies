@@ -7,7 +7,6 @@ const Result = ({ result, handleClick, movieIds, search }) => {
   useEffect(() => {
     if (movieIds.includes(result.imdbID)) {
       setDisabled(true);
-      console.log("This works");
     } else {
       setDisabled(false);
     }

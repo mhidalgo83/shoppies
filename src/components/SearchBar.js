@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import axios from "axios";
 import Button from "./Button";
 
@@ -6,23 +7,42 @@ const SearchBar = ({ search, setSearch, setResults, setError }) => {
     setSearch(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  useEffect(() => {
     axios
       .get(
         `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${search}&type=movie`
       )
       .then((res) => {
         if (res.data.Error) {
-          setError(`${res.data.Error} Please enter another search term.`);
+          if (!search) {
+            setError("Please enter a movie title in the search bar above.");
+          } else {
+            setError(`${res.data.Error} Please enter another search term.`);
+          }
         } else {
-          console.log(res);
-          setError("")
+          setError("");
           setResults(res.data.Search);
         }
       })
       .catch((err) => console.log(err));
-  };
+  }, [search]);
+
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     axios
+  //       .get(
+  //         `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${search}&type=movie`
+  //       )
+  //       .then((res) => {
+  //         if (res.data.Error) {
+  //           setError(`${res.data.Error} Please enter another search term.`);
+  //         } else {
+  //           setError("");
+  //           setResults(res.data.Search);
+  //         }
+  //       })
+  //       .catch((err) => console.log(err));
+  //   };
 
   return (
     <div className="search">
@@ -36,9 +56,9 @@ const SearchBar = ({ search, setSearch, setResults, setError }) => {
             onChange={handleSearch}
           />
         </div>
-        <Button className="search__button" onClick={handleSubmit}>
+        {/* <Button className="search__button" onClick={handleSubmit}>
           Search
-        </Button>
+        </Button> */}
       </form>
     </div>
   );

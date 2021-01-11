@@ -3,6 +3,7 @@ import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import Results from "./components/Results";
 import Nominees from "./components/Nominees";
+import Banner from "./components/Banner";
 
 const App = () => {
   const [error, setError] = useState("");
@@ -39,6 +40,7 @@ const App = () => {
           search={search}
         />
       </section>
+      {nominees.length === 5 && <Banner nominees={nominees} />}
     </div>
   );
 };

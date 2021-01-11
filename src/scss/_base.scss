@@ -26,6 +26,10 @@
       font-size: 3rem;
   }
 
+  li {
+      list-style: none;
+  }
+
   .container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -46,4 +50,8 @@
       text-align: center;
       width: 48%;
       min-height: 50vh;
+  }
+
+  .visible {
+      display: none;
   }
