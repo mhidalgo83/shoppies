@@ -32,7 +32,7 @@ h1 {
 }
 
 li {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   list-style: none;
 }
 
@@ -107,6 +107,17 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+}
+
+.search__form--input label {
+  font-size: 1.4rem;
+}
+
+.search__form--input input {
+  border: solid 1px black;
+  font-family: inherit;
+  padding: 1rem;
 }
 
 .results {
@@ -149,9 +160,15 @@ header {
   margin-left: 25%;
   top: 30%;
   padding: 5%;
+  opacity: 1;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 .banner__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -164,6 +181,9 @@ header {
 }
 
 .visible {
-  display: none;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  visibility: collapse;
+  opacity: 0;
 }
 /*# sourceMappingURL=main.css.map */

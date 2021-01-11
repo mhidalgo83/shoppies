@@ -10,8 +10,13 @@
     margin-left: 25%;
     top: 30%;
     padding: 5%;
+    opacity: 1;
+    transition: all .5s;
 
     &__close {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
         display: flex;
         align-self: flex-end;
         &:hover {
@@ -21,5 +26,7 @@
 }
 
 .visible {
-    display: none;
+    transition: all .5s;
+    visibility: collapse;
+    opacity: 0;
 }

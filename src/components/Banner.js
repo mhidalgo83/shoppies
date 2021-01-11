@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faAlignJustify, fas, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Banner = ({ nominees }) => {
   const [close, setClose] = useState(true);
@@ -20,6 +20,7 @@ const Banner = ({ nominees }) => {
       <FontAwesomeIcon
         className="banner__close"
         icon={faTimes}
+        size="2x"
         onClick={handleClick}
       />
       <h1>These are your nominees for the 2021 Shoppies!!</h1>
