@@ -17,7 +17,7 @@ const SearchBar = ({ search, setSearch, setResults, setError }) => {
           if (!search) {
             setError("Please enter a movie title in the search bar above.");
           } else {
-            setError(`${res.data.Error} Please enter another search term.`);
+            setError(`${res.data.Error} Please enter a valid search term.`);
           }
         } else {
           setError("");
