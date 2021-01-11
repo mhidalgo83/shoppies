@@ -1,0 +1,25 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    border: solid black 1px;
+    background: white;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    top: 30%;
+    padding: 5%;
+
+    &__close {
+        display: flex;
+        align-self: flex-end;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.visible {
+    display: none;
+}

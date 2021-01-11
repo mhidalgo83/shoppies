@@ -1,0 +1,14 @@
+.results {
+    min-height: 5vh;
+    &__list {
+        margin: 0 2%;
+    }
+    &__result{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        text-align: left;
+        margin: 1% 0;
+    }
+}
