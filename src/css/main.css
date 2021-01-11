@@ -150,4 +150,20 @@ header {
   top: 30%;
   padding: 5%;
 }
+
+.banner__close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.banner__close:hover {
+  cursor: pointer;
+}
+
+.visible {
+  display: none;
+}
 /*# sourceMappingURL=main.css.map */

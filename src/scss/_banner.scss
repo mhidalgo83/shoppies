@@ -10,4 +10,16 @@
     margin-left: 25%;
     top: 30%;
     padding: 5%;
+
+    &__close {
+        display: flex;
+        align-self: flex-end;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.visible {
+    display: none;
 }

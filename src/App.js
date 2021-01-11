@@ -40,7 +40,7 @@ const App = () => {
           search={search}
         />
       </section>
-      {nominees.length === 5 && <Banner nominees={nominees} />}
+      <Banner nominees={nominees} />
     </div>
   );
 };
